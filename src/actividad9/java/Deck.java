@@ -52,21 +52,29 @@ public class Deck {
     }
 
     public void head(){
+        try{
         System.out.println(deck.get(0));
         deck.remove(0);
         System.out.println("Quedan " + deck.size() + " cartas");
+        }catch(Exception e){
+               System.out.println("Se han agotado las cartas"); 
+        }
         
     }
-
-
+    
     public void pick() {
+        try{
         Random random = new Random();
         System.out.println(deck.get(random.nextInt(deck.size())));
         deck.remove(random.nextInt(deck.size()));
         System.out.println("Quedan " + deck.size() + " cartas");
+        }catch(Exception e){
+            System.out.println("Se han agotado las cartas");
+        }
     }
 
     public void hand() {
+        try{
         for(int i=0; i<=4; i++){
             System.out.println(deck.get(i));
         }
@@ -74,6 +82,9 @@ public class Deck {
             deck.remove(i);
         }
         System.out.println("Quedan " + deck.size()+ " cartas");
+        }catch(Exception e){
+            System.out.println("Se han agotado las cartas");
+        }
     }
 
     void suflle() {
